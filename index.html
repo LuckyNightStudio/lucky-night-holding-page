@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Night Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink: #f0b2c5;
+            --pink-dark: #bcdacd;
+            --text: #222;
+            --accent: #e5255c;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+        }
+
+        /* ----------------- HERO ----------------- */
+        .hero {
+            position: relative;
+            background: var(--pink);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 1.25rem;
+            overflow: hidden;
+        }
+
+        /* Subtle decorative circles */
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.2;
+        }
+        .hero::before {
+            width: 160px;
+            height: 160px;
+            top: 6%;
+            left: -60px;
+        }
+        .hero::after {
+            width: 220px;
+            height: 220px;
+            bottom: -100px;
+            right: -70px;
+        }
+
+        /* Logo */
+        .logo {
+            max-width: 220px;
+            width: 60%;
+            height: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-family: 'swear-display', serif;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            font-weight: 900;
+            margin: 0 0 1rem;
+            line-height: 1.15;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            font-weight: 600;
+            color: #fff;
+            background: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .contact-link:hover { background: var(--pink-dark); }
+
+        /* Entrance animation */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero { animation: subtleFade 0.8s ease-out both; }
+            @keyframes subtleFade { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="logo.png" alt="Lucky Night Studio logo" class="logo" />
+
+        <h1>We’re Taking a Short Break</h1>
+        <p class="tagline">Don’t worry—we’ll be back soon! In the meantime, if you need us just drop an email. ✌️</p>
+        <a class="contact-link" href="mailto:hiya@luckynightstudio.co.uk">hiya@luckynightstudio.co.uk</a>
+    </section>
+</body>
+</html>
